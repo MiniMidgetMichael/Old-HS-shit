@@ -17,4 +17,3 @@ def strip_space(op_file):
 
 
 ##print (strip_space("P:/Python/alphabet_dict.py"))
-##TESTING

@@ -9,7 +9,6 @@ from number_funct import *
 
 sp.check_output("dir C:\Windows\winsxs\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_6.1.7601.17514_none_f387767e655cd5ab", shell=True).decode()
 
-print ("TEST")
 ##print (sp.check_output(['nmap', '--help'], shell=True).rstrip().decode())
 ##import os;
 ##os.system("C:\\Temp\\a b c\\Notepad.exe");
