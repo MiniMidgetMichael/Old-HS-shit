@@ -1,0 +1,10 @@
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\bin\Debug\Bin_Hex_Dec Converter.exe.config
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\bin\Debug\Bin_Hex_Dec Converter.exe
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\bin\Debug\Bin_Hex_Dec Converter.pdb
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\bin\Debug\Bin_Hex_Dec Converter.xml
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec_Converter.frmConverter.resources
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec_Converter.Resources.resources
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec Converter.vbproj.GenerateResource.Cache
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec Converter.exe
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec Converter.xml
+P:\Python\PyVB\Bin_Hex_Dec Converter\Bin_Hex_Dec Converter\obj\Debug\Bin_Hex_Dec Converter.pdb
