@@ -13,4 +13,5 @@ IGNORE:
 ^^^^ all redundant and obsolete files ^^^^
 
 TO-DO:
+  replace all 'is_number(x)' references to the proper 'str.isnum()'
   finish 'TO-DO' list
