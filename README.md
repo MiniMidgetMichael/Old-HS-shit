@@ -7,6 +7,7 @@ IGNORE:
   alphabet_dict.py
   hex_values.py
   is_number.py
+  file_test.py
   /PyVB
 
 ^^^^ all redundant and obsolete files ^^^^
