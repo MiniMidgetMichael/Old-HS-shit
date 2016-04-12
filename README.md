@@ -11,3 +11,6 @@ IGNORE:
   /PyVB
 
 ^^^^ all redundant and obsolete files ^^^^
+
+TO-DO:
+  finish 'TO-DO' list
