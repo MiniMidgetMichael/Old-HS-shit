@@ -27,6 +27,8 @@ alphabet = OrderedDict([
     ("x" , 24),
     ("y" , 25),
     ("z" , 26),
+    (" " , 27),
+    ("_" , 28),
     ("A" , 1),
     ("B" , 2),
     ("C" , 3),
@@ -55,4 +57,5 @@ alphabet = OrderedDict([
     ("Z" , 26)
 ])
 alphabet_items = list(alphabet.items())
+alphabet_keys = list(alphabet.keys())
 alphabet_values = list(alphabet.values())
