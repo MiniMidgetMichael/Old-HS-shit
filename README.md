@@ -1,3 +1,5 @@
+#! C:Program Files (x86)Notepad++
+otepad++.exe
 # Python
 misc python stuff
 
