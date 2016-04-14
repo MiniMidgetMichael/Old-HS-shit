@@ -14,9 +14,36 @@ for i in nums_1:
 
 ##print (alphas)
 
-print (''.join(alphas))
+##print (''.join(alphas))
 
-nums_2 = (22,12,200,12,1000,212,12,1000,210,201,12,1000,202,12,200,112,1,200,221,1000,202,120,1000,21,12,202,1000,202,22,12,1000,20,110,1,21,1000,202,22,200,12,12,1001,11,100,21,100,202,201,1001,100,201,112,202,1001,211,12,200,221,1001,201,12,10,210,200,12)
+nums_2 = [22,12,200,12,1000,212,12,1000,210,201,12,1000,202,12,200,112,1,200,221,1000,202,120,1000,21,12,202,1000,202,22,12,1000,20,110,1,21,1000,202,22,200,12,12,1001,11,100,21,100,202,201,1001,100,201,112,202,1001,211,12,200,221,1001,201,12,10,210,200,12]
 
-for i in nums_2:
-    pass
+def is_bin(x):
+    x = str(x)
+    bad = []
+    index = 0
+    while not(index == len(x) - 1):
+        for i in x:
+            if i != "0" and i != "1":
+                bad += i
+        index += 1
+    if len(bad) > 0:
+        return False
+    else:
+        return True
+
+nums_2_bin = []
+for index, i in enumerate(nums_2):
+    ##print (index)
+    ##print (is_bin(i))
+    if is_bin(i):
+        nums_2_bin.append(i)
+        nums_2.pop(index)
+        ##print (index, i)
+
+##print (nums_2_bin)
+    
+##print (nums_2)
+
+for i in nums_2_bin:
+    print (b'\x%s' % i)
