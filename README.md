@@ -1,4 +1,3 @@
-otepad++.exe
 # Python
 misc python stuff
 
