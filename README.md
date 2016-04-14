@@ -1,3 +1,5 @@
+#! 'C:/Program Files (x86)/Notepad++/notepad++.exe'
+otepad++.exe
 # Python
 misc python stuff
 
