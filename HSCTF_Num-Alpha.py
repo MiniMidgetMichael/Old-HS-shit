@@ -18,37 +18,16 @@ for i in nums_1:
 nums_2 = [22,12,200,12,1000,212,12,1000,210,201,12,1000,202,12,200,112,1,200,221,1000,202,120,1000,21,12,202,1000,202,22,12,1000,20,110,1,21,1000,202,22,200,12,12,1001,11,100,21,100,202,201,1001,100,201,112,202,1001,211,12,200,221,1001,201,12,10,210,200,12]
 
 nums_2 = list([str(i) for i in nums_2])
-twos = {}
-ones = {}
-for index, i in enumerate(nums_2):
-    if '2' in i:
-        twos[i] = index
+
+text = ""
+for x in nums_2:
+    num = int(x, 3)
+    print(num)
+    if num == 27:
+        text += " " 
+    elif num == 28:
+        text += "_"
     else:
-        ones[i] = index
+        text += chr(num+96)
 
-
-##print (twos)
-##print (ones)
-
-
-freq_1 = {}
-freq_2 = {}
-
-for i, k in ones.items():
-    ##print (i)
-    if not(i in freq_1):
-        freq_1[i] = [0, ones[i]]
-        ##print (i)
-    else:
-        freq_1[i][0] += 1
-        ##print (i)
-
-print (freq_1)
-
-for i, k in twos.items():
-    if not(i in list(freq_2.keys())):
-        freq_2[i] = [0, twos[i]]
-    else:
-        freq_2[i][0] += 1
-
-print (freq_2)
+print(text)
