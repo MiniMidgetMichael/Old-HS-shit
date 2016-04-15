@@ -1,6 +1,4 @@
 #! C:/Users/MichaelLFarwell/AppData/Local/Programs/Python/Python35-32/python.exe
-#! C:UsersMichaelLFarwellAppDataLocalProgramsPythonPython35-32python.exe
-#! C:\Users\MichaelLFarwell\AppData\Local\Programs\Python\Python35-32\python.exe
 
 import subprocess as sp
 import nmap_args as n_args
@@ -80,7 +78,7 @@ def ask_for_input():
                 print ("%s is not an argument" % i)
             else:
                 ip = input("Please give an ip: \n")
-                print (sp.check_output(['nmap', [i for i in args], ip], shell=True).rstrip().decode())
+                print (sp.check_output(['nmap', [i for i in args], ip], shell=True,stdout=sp.STDOUT).rstrip().decode())
         ask_for_input()
     elif option == 'e':
             confirm = input("Are you sure? \n [Y]es or [N]o \n").casefold()
@@ -95,4 +93,3 @@ def ask_for_input():
 
 
 ask_for_input()
-
