@@ -67,20 +67,22 @@ valid because it is bound on the right side by an "a". The character with index 
 bounded by the correct characters, it only has a length of one.
 """
 
-
-sub_strings = 0
-next_a = False
-last_a = False
 sub_len = 0
+num_subs = 0
+last_a = False
 
 for index, i in enumerate(string):
-    if i == 'a':
-        if not(last_a):
-            sub_len = 1
-        else:
-            last_a = True
+    if i == "a":
+        if last_a == True:
             sub_len += 1
-        if string[index + 1] == 'a':
-            next_a = True
         else:
-            next_a = False
+            sub_len = 1
+            last_a = True
+    else:
+        if last_a == True:
+            if sub_len >= 2:
+                ##print (index, sub_len)
+                num_subs += 1
+        sub_len = 0
+
+##print (num_subs)
