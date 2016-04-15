@@ -75,10 +75,12 @@ sub_len = 0
 
 for index, i in enumerate(string):
     if i == 'a':
-        last_a = True
-        sub_len += 1
+        if not(last_a):
+            sub_len = 1
+        else:
+            last_a = True
+            sub_len += 1
         if string[index + 1] == 'a':
             next_a = True
         else:
             next_a = False
-    
