@@ -22,7 +22,7 @@ nums_2 = list([str(i) for i in nums_2])
 text = ""
 for x in nums_2:
     num = int(x, 3)
-    print(num)
+    ##print(num)
     if num == 27:
         text += " " 
     elif num == 28:
@@ -30,4 +30,55 @@ for x in nums_2:
     else:
         text += chr(num+96)
 
-print(text)
+##print(text)
+
+string = """caanqaaeamdwaagarapabseaawaabawaoaalaaaaaxxaapsxeaagragaaadawaoaanaawpqatdaaatakwsaaaayaaaaealabjxaaaeaaauamjawnsaataaaoaaqaxaaaaaeaajrahaaaaaa
+            djaaqtewhspaaaaannaoaaaaaboaaaaaaaaaataqadihaaaaqawwaaazoaxaoapabuzwaaaaaaaahlaauakaaiyjavwcaasxaaturabanuataoikpkaoalaaaaaaafgaalwuxzaazaaltaz
+            jdaaasalraabaqjmaaadaaaaaaaaiauaqbajaaactaarwrcavmaaxxaqrxaaaaaaaeaaaqaajafaaadaciaaaakadraacafaahlaiaaaakefahalaaparxaaagaacnoraaytaloasaadaaa
+            afataaoqarcazjmqeafajgaaaaaaavvaaaaaiaaaaiaaczrbalomaakgilacaayaayaxwaotaarlaxpaaraapaaaswhxxaajeagfaaaaeaaalaaaaeeaatoamayaaauaadaueccvaauvaak
+            owasxaaatgnwaawtrxtudppfaaqfypaaaaanraiaaaynagqqaabdaayaaazaesasaaaaaaoaaaaacvawcasaiaaaavxafaqeaaadaciaaanujgxamxiaadazanaamaygabwrfazalaaawkp
+            aalsaafiiataatavvaqaqzdatyaaaaanpsaaaajvaydxacyadaolabhocaaawaniniuaaakaaiaaanxaaxaccfaarlaakaabenevaaacaydaaxaaxepasmaasadabanaaafaalaladaagaf
+            aaaaaahagnixwemathayfagaxapkaaaafaasaacawaaaaackawamaaaawaatnaaoaaatbaniafawaalkaaumqzaoaauaamazaztamvdaxdaraeasaaaaachoavaaaqaajwaaaaaacarlaxa
+            aapaaaaamfaaoeaoaaamapkacamraalbnavaaaxiaqazaamcmanagaicraawaaascbmraaavabaawaagqataazuaaaaakawxwazparaaaaaaaaasaiedhfaaaetaaaapaaapiaaaawembhm
+            afalgayaaodamqazqwaasdeaappaacaarahnalaeaaaaanasasbzaaaaoaraeaazhaaevoiaazpypuggeayaapanzakaaaavzaacaaraaaaaaaxsvyacoxvttzgtbcuazxkuaaaiflbjzaa
+            ojaboxmaadkaaakzsbxaaaajanaatgaaaazarfaawujasaanxazowlfaayahaaaaaabdoayufltoaiabayaaafawiazaqaasaafchifgpjuvauaaayaaatvaxaaeaaharrazavlayaaaaaa
+            agxcfaemvyaaaaaaulxajahazgapaasagswmahaapbaaafnaaywpagqiauaaaavbmgifaweatvaayhaadajaaaaragaminaafixwuaaexaajawzaazlaxastaatmdaaaaairfnraaaaaaax
+            aafgaattgakkaacioaabatahfqabmvzfzafifsbbnaaouaahalaahuaawaagataamarjgaaaamianabhaaaaaaiahtpxvaaaaaaahaahtgaaaazvafaaaavzkamalawaaqeaaaavgjkanen
+            airaalazaaaayafsazaacodeawvamtdyaaaynaaxaazvssadaqdvstaaolcsecwszzaajahawajooaahgumavaabriwaazgrtaauaxpaaawbhaberaqltaaaaqaaaaxayldaaxgakmwmaax
+            xayualfaaijsaaaazxpaaaewcngnaaaypvmayaiaamaasaaakattsadqclclafadaaaadsnwdnaaqasataabasaataaaapajqatuakaygaaoamatgaacaaaaaljwzaaaqajafanaaxaagxq
+            aaibgaslawuadeaaxbaweaxxaaaaesnaacatahaitatqsabkaaaaatlajpavaaadlnvzaeaascaaaahqmatanapciszqefcalacjraamhaaaaoanaganaaaaacaqcnaayaawaagazaayyaa
+            yjagasarbuafzpmpqeaohaaaglidaanrheaaaabnnaairalrbjuzaakaabgaeaadaaetaauaaaaazaadzxaaaagavazehulaauazvcaajcaaaaqgexaaaaajcirxauaahaoaaahohaanaay
+            oaalukbaauaaaaioaaakcobkoaqdvalasraaawuaakaaaaaadamsaaaaaqakaanaxaaaiwaodazaanaaaravbqimznaataaesaavyqjakgabaeaiasamapaaaalwzaikpbclaaaacalakus
+            aapaaaaqnaanaaahoaaaecaarwwaaaabxaaaaaepalaaaaaaaxaxgamawmalaaaaanqeaaaaxaomajaaaiavaaqxwaazaaaaaaaaapqpaaaaaastgdydwxaalahaiziaamauayaqaxyryai
+            zkaefuaaaaaaaeaaanaaiaaaaayaaaaaaiywaaahaaaaajtawmanmadayaaawaaaaxagaaicaiagaaanaaakaodapaaaaabaaaaaadauevaaywbaaaaaaaaaaygaaawaazimwasraazoagv
+            zpaabrnmlhqghhoaaanbaaanaaaaaqxauaaataaaabaahaaaafzaawaapaaaaaarazalqhobgzacazasauaaaaaujafowabywlaagaaadaaatamaaagnpmaeaaaaahmmxapanaraagsxout
+            baaaauaqamlazaaaaaaaazaalnsacxltaavaaxpldaqqhapasmalaasutapuasaaatuloaaadaizmaaaaaqqyalyopwakaayhvyaaaczjeauavauxypyenmaaqiaaqiaahuaaakaauja
+        """
+
+"""
+Find the number of sub-strings with the following properties in the given string:
+
+Length >= 2
+Contains only A's
+Bound on both sides by either the beginning of the string, the end of the string, or by any character other than a.
+
+For example, lets take the string "aabaaacadaa". It contains three such sub-strings, indexes 0-1, 3-5, and 9-10. The sub-string from indexes 3-4 is not
+valid because it is bound on the right side by an "a". The character with index eight[? nine] is not valid either, because although it is an "a" and is
+bounded by the correct characters, it only has a length of one.
+"""
+
+
+sub_strings = 0
+next_a = False
+last_a = False
+sub_len = 0
+
+for index, i in enumerate(string):
+    if i == 'a':
+        last_a = True
+        sub_len += 1
+        if string[index + 1] == 'a':
+            next_a = True
+        else:
+            next_a = False
+    
