@@ -3,6 +3,7 @@
 #! C:\Users\MichaelLFarwell\AppData\Local\Programs\Python\Python35-32\python.exe
 
 import subprocess as sp
+import nmap_args as n_args
 import webbrowser, os, methods
 from number_funct import *
 
@@ -70,36 +71,17 @@ def ask_for_input():
             print (is_args + " is not an answer, please answer with 'y' or 'n' \n")
             is_args = input("Any arguments? \n [Y] or [N] \n")
         args = input("Arguments (seperated by comma): \n")
-        valid_chars = (" ", "-", ",", "?",)
-        for index, i in enumerate(args):
-            if not(i in valid_chars or methods.is_alphanumeric(i)):
-                print (i + " is not a valid character")
-                args = input("Arguments (separated by comma): \n")
-        arg_list = []
-        args = ''.join(args)
+        args = args.replace(' ', '')
+        ##print (args)
         args = args.split(sep=',')
-        for index, i in enumerate(args):
-            if (i == " ") and (args[index+1] == " "):
-                print (i)
-        #while ('' in args):
-            #args.remove('')
-        print ("#ARGS", args)
-        for index, i in enumerate(args):
-            if not(i[0] == "-"):
-                args[index] = "-" + i
-        try:
-            sp.check_output(['nmap', [i for i in args]], shell=True).rstrip().decode()
-            good_args = True
-        except:
-            ValueError
-            good_args = False
-        if good_args:
-            ip = input("Please give an ip: \n")
-            print (sp.check_output(['nmap', [i for i in args], ip], shell=True).rstrip().decode())
-            ask_for_input()
-        else:
-            print ("Invalid Arguments \n")
-            ask_for_input()
+        ##print (op_list)
+        for i in args:
+            if not(i in n_args.nmap_args):
+                print ("%s is not an argument" % i)
+            else:
+                ip = input("Please give an ip: \n")
+                print (sp.check_output(['nmap', [i for i in args], ip], shell=True).rstrip().decode())
+        ask_for_input()
     elif option == 'e':
             confirm = input("Are you sure? \n [Y]es or [N]o \n").casefold()
             while not(confirm == 'y' or confirm == 'n'):
