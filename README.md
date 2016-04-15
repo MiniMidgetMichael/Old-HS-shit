@@ -2,6 +2,8 @@
 misc python stuff
 
 Just Random Files, some (alot) may not work
+***HSCTF Practice Round Solutions included***
+
 
 IGNORE:
   alphabet_dict.py
