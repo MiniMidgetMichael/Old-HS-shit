@@ -28,7 +28,14 @@ def x_bin(s):
         ##else:
             ##print ("##", bin(i)[2:].zfill(8), "##")
 
-
+def o_bin(s):
+    bin_list = []
+    for i in s:
+        i = ord(i)
+        x = bin(i)
+        bin_list += [x[2:].zfill(8)]
+    print (bin_list)
+    prev_value = 0
         
 
 xor = x_bin("mike")
