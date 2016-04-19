@@ -78,6 +78,11 @@ if __name__ == "__main__":
     """
         >>>13 63 48
         >>> ? 0
+
+        'dbcaefgjihklmponqrsutvwzxy' = 'abcdefghijklmnopqrstuvwxyz'
+
+        ***IF CONTENTS ARE SAME, END VALUE IS SAME***
+            EX.: 'mike' == 'emki'
     """
     print ("## XOR ##\n" + xor_bin(string))
     x_string = xor_bin(string)
