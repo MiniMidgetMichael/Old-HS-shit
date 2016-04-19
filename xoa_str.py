@@ -74,10 +74,10 @@ def and_bin(s):
 
 
 if __name__ == "__main__":
-    string = "dbcaefgjihklmponqrsutvwzxy"
+    ##string = "thelazybrownfoxjumpedoverthereddog1=00 1"
     """
         >>>13 63 48
-        >>> ? 0
+        >>> ? 0
 
         'dbcaefgjihklmponqrsutvwzxy' = 'abcdefghijklmnopqrstuvwxyz'
 
