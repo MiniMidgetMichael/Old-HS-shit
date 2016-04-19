@@ -84,6 +84,7 @@ if __name__ == "__main__":
         ***IF CONTENTS ARE SAME, END VALUE IS SAME***
             EX.: 'mike' == 'emki'
     """
+    string = 
     print ("## XOR ##\n" + xor_bin(string))
     x_string = xor_bin(string)
     print ("## OR ##\n" + or_bin(string))
