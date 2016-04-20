@@ -72,9 +72,45 @@ def and_bin(s):
     value = bin(value)[2:].zfill(8)
     return value
 
+def cipher(s):
+    bin_list = []
+    bin_strings = []
+    order = {}
+    values = {}
+    for index, i in enumerate(s):
+        values[i] = ord(i)
+        order[index] = i
+        i = ord(i)
+        x = bin(i)
+        bin_strings += [x[2:].zfill(8)]
+        bin_list += [x]
+    print ("BIN_LIST:    ", bin_list)
+    print ("BIN_STRINGS: ", bin_strings)
+    print ("ORDER:       ", order)
+    print ("VALUES:      ", values)
+    mixed_bin = []
+    for i in bin_list:
+        i = int(i, base=2)
+"""
+        INSERT METHOD HERE
+"""
+        mixed_bin.append(x)
+    print ("MIXED_BIN:   ", mixed_bin)
+    
+    
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     string = input("Give string: \n")
+    cipher(string)
     """
         >>>13 63 48
         >>> ? 0
