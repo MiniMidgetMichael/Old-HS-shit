@@ -73,7 +73,6 @@ def and_bin(s):
     return value
 
 def cipher(s):
-    length = len(s)
     bin_list = []
     bin_strings = []
     order = {}
@@ -85,6 +84,10 @@ def cipher(s):
         x = bin(i)
         bin_strings += [x[2:].zfill(8)]
         bin_list += [x]
+    print ("BIN_LIST:    ", bin_list)
+    print ("BIN_STRINGS: ", bin_strings)
+    print ("ORDER:       ", order)
+    print ("VALUES:      ", values)
     mixed_bin = []
     for i in bin_list:
         i = int(i, base=2)
@@ -98,6 +101,7 @@ def cipher(s):
     for i in mixed_bin:
         i = int(i, base=2)
         end_values.append(i)
+<<<<<<< HEAD
     ciphered = "".join([chr(i) for i in end_values])
     if __name__ == "__main__":
         print ("LENGTH:      ", length)
@@ -121,6 +125,12 @@ def cipher(s):
 >>>>>>> parent of 147ec4b... 'completed' cipher method
 =======
 >>>>>>> parent of 147ec4b... 'completed' cipher method
+=======
+    print ("".join([chr(i) for i in end_values])
+           )
+    print ("MIXED_BIN:   ", mixed_bin)
+    print ("END_VALUES:  ", end_values)
+>>>>>>> parent of 70bac0f... Finished method
     
 
 
