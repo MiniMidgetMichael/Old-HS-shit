@@ -34,30 +34,9 @@ def cipher(s):
         print ("MIXED_BIN:   ", mixed_bin)
         print ("END_VALUES:  ", end_values)
         print ("CIPHERED TEXT:", ciphered)
-    return ciphered
     
 
-def decipher(s):
-    bin_list = []
-    for i in s:
-        i = ord(i)
-        x = bin(i)
-        bin_list += [x]
-    end_bin = []
-    for i in bin_list:
-        i = int(i, base=2)
-        i = i ^ len(s)
-        x = bin(i)
-        x = x[2:].zfill(8)
-        end_bin += [x]
-    end_values = []
-    for i in end_bin:
-        i = int(i, base=2)
-        end_values.append(i)
-    deciphered = "".join([chr(i) for i in end_values])
-    if __name__ == "__main__":
-        print ("DECIPHERED:  ", deciphered)
-    return deciphered
+
 
 
 
@@ -81,5 +60,4 @@ def decipher(s):
 
 if __name__ == "__main__":
     string = input("Give string: \n")
-    string = cipher(string)
-    decipher(string)
+    cipher(string)
