@@ -89,6 +89,7 @@ def cipher(s):
     for i in bin_list:
         i = int(i, base=2)
 <<<<<<< HEAD
+<<<<<<< HEAD
         i = i ^ len(s)
         x = bin(i)
         x = x[2:].zfill(8)
@@ -108,12 +109,17 @@ def cipher(s):
         print ("END_VALUES:  ", end_values)
         print ("CIPHERED TEXT:", ciphered)
 =======
+=======
+>>>>>>> parent of 147ec4b... 'completed' cipher method
 """
         INSERT METHOD HERE
 """
         mixed_bin.append(x)
     print ("MIXED_BIN:   ", mixed_bin)
     
+<<<<<<< HEAD
+>>>>>>> parent of 147ec4b... 'completed' cipher method
+=======
 >>>>>>> parent of 147ec4b... 'completed' cipher method
     
 
