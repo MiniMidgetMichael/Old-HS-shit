@@ -14,6 +14,7 @@ Just Random Files, some (alot) may not work<br>
 
 ^^^^ all redundant and obsolete files ^^^^
 
-TO-DO:
+TO-DO:<list>
   replace all 'is_number(x)' references to the proper 'str.isnum()'
   finish 'TO-DO' list
+</list>
