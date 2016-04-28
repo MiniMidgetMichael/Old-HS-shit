@@ -4,52 +4,17 @@ def cipher(s):
     length = len(s)
     bin_list = []
     end_values = []
+    key = (length % 2)
     for i in s:
         i = ord(i)
         x = bin(i)
         bin_list += [x]
     for i in bin_list:
         i = int(i, base=2) ^ length
-        end_values += [i]
-
-
-    
+        x = i ^ key
+        end_values += [x]
     ciphered = "".join([chr(i) for i in end_values])
     return ciphered
-
-
-##    length = len(s)
-##    bin_list = []
-##    end_values = []
-##    for i in s:
-##        i = ord(i)
-##        x = bin(i)
-##        bin_list += [x]
-##    for i in bin_list:
-##        i = int(i, base=2) ^ length
-##        end_values += [i]
-##    ciphered = "".join([chr(i) for i in end_values])
-##    return ciphered
-
-
-##def decipher(s):
-##    length = len(s)
-##    bin_list = []
-##    for i in s:
-##        i = ord(i)
-##        x = bin(i)
-##        bin_list += [x]
-##    end_values = []
-##    for i in bin_list:
-##        i = int(i, base=2)
-##        i = i ^ length
-##        end_values.append(i)
-##    deciphered = "".join([chr(i) for i in end_values])
-##    return deciphered
-
-
-
-
 
 
 
