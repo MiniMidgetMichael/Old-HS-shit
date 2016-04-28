@@ -6,11 +6,11 @@ Just Random Files, some (alot) may not work<br>
 
 
 <b>IGNORE</b>:<br>
-  alphabet_dict.py<br>
-  hex_values.py<br>
-  is_number.py<br>
-  file_test.py<br>
-  /PyVB
+  <li>alphabet_dict.py<br>
+  <li>hex_values.py<br>
+  <li>is_number.py<br>
+  <li>file_test.py<br>
+  <li>/PyVB
 
 ^^^^ all redundant and obsolete files ^^^^
 
