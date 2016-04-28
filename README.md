@@ -6,10 +6,10 @@ Just Random Files, some (alot) may not work<br>
 
 
 IGNORE:
-  alphabet_dict.py<br></br>
-  hex_values.py<br></br>
-  is_number.py<br></br>
-  file_test.py<br></br>
+  alphabet_dict.py<br>
+  hex_values.py<br>
+  is_number.py<br>
+  file_test.py<br>
   /PyVB
 
 ^^^^ all redundant and obsolete files ^^^^
