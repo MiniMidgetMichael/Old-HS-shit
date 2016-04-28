@@ -10,7 +10,7 @@ Just Random Files, some (alot) may not work<br>
   <li>hex_values.py<br>
   <li>is_number.py<br>
   <li>file_test.py<br>
-  <li>/PyVB
+  <li>/PyVB/
 
 ^^^^ all redundant and obsolete files ^^^^
 
