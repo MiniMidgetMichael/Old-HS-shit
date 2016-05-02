@@ -6,7 +6,7 @@ from number_funct import *
 import sys
 import time
 from collections import OrderedDict
-from methods import new_good_input
+from methods import good_input
 
 
 
@@ -36,7 +36,7 @@ def create_turtle():
     valids = ['y', 'n']
     ## NEW GOOD_INPUT vvv
 ##    good_in = good_input(isRight, "y", "n")
-    ans = new_good_input(isRight, valids)
+    ans = good_input(isRight, valids)
     if (ans == 'y'):
         print ("You created a turtle! \n His/Her name is %s" % name)
         usr_turtle = turtle.Turtle(name=name)

@@ -99,7 +99,7 @@ def pairs_value(num_pairs):
     return values_str
 
 
-def new_good_input(in_query, values):
+def good_input(in_query, values):
     ## WILL RETURN STRING
     is_good = False
     for index, v in enumerate(values):
@@ -131,6 +131,6 @@ def is_alphanumeric(x):
 if __name__ == "__main__":
     query = "Pick a # between 0 and 9: \n"
     values = [i for i in range(0, 9)]
-    ans = new_good_input(query, values)
+    ans = good_input(query, values)
     print ("Your answer was: " + ans)
 
