@@ -99,20 +99,6 @@ def pairs_value(num_pairs):
     return values_str
 
 
-
-def good_input(in_query, g=None, b=None, c=None):
-    outcomes = (g, b, c)
-    isGood = False
-    while (isGood == False):
-        ans = input(in_query).casefold()
-        if (((ans == g) or (ans == b) or (ans == c))):
-            isGood = True
-            return isGood, ans
-        else:
-            ##print ("Please answer with " + g + " or " + b + " or " + c + "\n Your answer: %s" % ans)
-            ans = ""
-
-
 def new_good_input(in_query, values):
     ## WILL RETURN STRING
     is_good = False
