@@ -16,4 +16,5 @@ Just Random Files, some (alot) may not work<br>
 
 <b>TO-DO</b>:<br>
 <li>replace all 'is_number(x)' references to the proper 'str.isnum()'
+<li>remove/fix obsolete & redundant files
 <li>finish 'TO-DO' list
