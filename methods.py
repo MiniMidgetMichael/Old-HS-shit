@@ -112,6 +112,21 @@ def good_input(in_query, g=None, b=None, c=None):
             ##print ("Please answer with " + g + " or " + b + " or " + c + "\n Your answer: %s" % ans)
             ans = ""
 
+
+def new_good_input(in_query, values):
+    is_good = False
+    for index, v in enumerate(values):
+        v = str(v)
+        values[index] = v
+    while not(is_good):
+        ans = input(in_query).casefold()
+        if (ans in values):
+            is_good = True
+            return ans
+        else:
+            print ("Please answer with one of: %s" % (values))
+
+
 def clearscreen():
     print ("\n" * 100)
 
@@ -124,3 +139,11 @@ def is_alphanumeric(x):
             return True
         except:
             ValueError
+
+
+if __name__ == "__main__":
+    query = "Pick a # between 0 and 9: \n"
+    values = [i for i in range(0, 9)]
+    ans = new_good_input(query, values)
+    print ("Your answer was: " + ans)
+
