@@ -114,6 +114,7 @@ def good_input(in_query, g=None, b=None, c=None):
 
 
 def new_good_input(in_query, values):
+    ## WILL RETURN STRING
     is_good = False
     for index, v in enumerate(values):
         v = str(v)

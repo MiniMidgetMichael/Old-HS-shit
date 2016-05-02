@@ -6,6 +6,7 @@ from number_funct import *
 import sys
 import time
 from collections import OrderedDict
+from methods import new_good_input
 
 
 
@@ -32,17 +33,26 @@ def good_input(in_query, g, b=None, c=None):
 def create_turtle():
     name = input("Please give your turtle a name: \n")
     isRight = "You named your turtle %s, are you sure? \n [y] or [n] \n" % name
-    good_in = good_input(isRight, "y", "n")
-    if good_in[0] == True:
-        if good_in[1] == "y":
-            print ("You created a turtle! \n His/Her name is %s" % name)
-            usr_turtle = turtle.Turtle(name=name)
-            return usr_turtle
-        elif good_in[1] == "n":
-            create_turtle()
+    valids = ['y', 'n']
+    ## NEW GOOD_INPUT vvv
+##    good_in = good_input(isRight, "y", "n")
+    ans = new_good_input(isRight, valids)
+    if (ans == 'y'):
+        print ("You created a turtle! \n His/Her name is %s" % name)
+        usr_turtle = turtle.Turtle(name=name)
+        return usr_turtle
     else:
-        print ("Please only answer with 'y' or 'n' \n your answer was %s" % good_in[1])
         create_turtle()
+##    if good_in[0] == True:
+##        if good_in[1] == "y":
+##            print ("You created a turtle! \n His/Her name is %s" % name)
+##            usr_turtle = turtle.Turtle(name=name)
+##            return usr_turtle
+##        elif good_in[1] == "n":
+##            create_turtle()
+##    else:
+##        print ("Please only answer with 'y' or 'n' \n your answer was %s" % good_in[1])
+##        create_turtle()
 
 def switchpen(t):
         if t.isdown():
@@ -272,3 +282,4 @@ def draw():
 
 if __name__ == "__main__":
     ##draw()
+    draw()
