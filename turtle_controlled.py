@@ -15,27 +15,10 @@ screen = turtle.Screen()
 
 colors = ("red", "orange", "yellow", "green", "blue", "purple", "black",)
 
-def good_input(in_query, g, b=None, c=None):
-    isGood = False
-    while (isGood == False):
-        ans = input(in_query).casefold()
-        if (ans == g) or (ans == b) or (ans == c):
-            isGood = True
-            return isGood, ans
-        else:
-            if (c is None):
-                print ("Please answer with " + g + " or " + b + "\n Your answer: %s" % ans)
-                ans = ""
-            else:
-                print ("Please answer with " + g + " or " + b + " or " + c + "\n Your answer: %s" % ans)
-                ans = ""
-
 def create_turtle():
     name = input("Please give your turtle a name: \n")
     isRight = "You named your turtle %s, are you sure? \n [y] or [n] \n" % name
     valids = ['y', 'n']
-    ## NEW GOOD_INPUT vvv
-##    good_in = good_input(isRight, "y", "n")
     ans = good_input(isRight, valids)
     if (ans == 'y'):
         print ("You created a turtle! \n His/Her name is %s" % name)
@@ -43,16 +26,6 @@ def create_turtle():
         return usr_turtle
     else:
         create_turtle()
-##    if good_in[0] == True:
-##        if good_in[1] == "y":
-##            print ("You created a turtle! \n His/Her name is %s" % name)
-##            usr_turtle = turtle.Turtle(name=name)
-##            return usr_turtle
-##        elif good_in[1] == "n":
-##            create_turtle()
-##    else:
-##        print ("Please only answer with 'y' or 'n' \n your answer was %s" % good_in[1])
-##        create_turtle()
 
 def switchpen(t):
         if t.isdown():
@@ -213,18 +186,12 @@ def _onscreenclick(self, fun, num=1, add=None):
                 fun(x, y)
             self.cv.bind("<Button-%s>" % num, eventfun, add)
 """
+
 def p_goto(xdummy, ydummy):
     usr_turtle.pu()
     usr_turtle.goto(xdummy, ydummy)
     usr_turtle.pd()
-
-##action = good_input("SWORDZ? \n [s]piral or [r]andom \n ", "s", "r")[1]
-##if action == "s":
-##    SWORDZ_spiral(usr_turtle, 1000, 500)
-##    screen.listen()
-##elif action == "r":
-##    SWORDZ_random(usr_turtle, 1000, 500)
-##    screen.listen()
+    
 """
 def _onclick(self, item, fun, num=1, add=None):
         #"#"#"Bind fun to mouse-click event on turtle.
