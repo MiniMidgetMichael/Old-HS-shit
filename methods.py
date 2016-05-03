@@ -18,7 +18,7 @@ def filter_non_hex(in_text):
     for index, i in enumerate(in_text_filtered):
         if i == " ":
             in_text_filtered.pop(index)
-        elif is_number(i):
+        elif i.isdigit():
             in_text_filtered.pop(index)
     return in_text_filtered
 
@@ -65,14 +65,14 @@ def pairs_num_value(hex_pairs):
         ##creates 2d array | [[0,1],[2,3]]
     num_array = []
     for i, k in dbl_array:
-        if (is_number(i) == False) and (is_number(k) == False):
+        if (i.isdigit() == False) and (k.isdigit() == False):
             i = hex_dict[i]
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
-        elif (is_number(i) == False):
+        elif (i.isdigit() == False):
             i = hex_dict[i]
             num_array.append([int(i), int(k)])
-        elif (is_number(k) == False):
+        elif (k.isdigit() == False):
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
         else:

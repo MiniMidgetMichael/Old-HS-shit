@@ -18,7 +18,7 @@ print ("#old_text", old_text, "\n")
 only_text = []
 leftovers = []
 for i in text_list:
-    if is_number(i) == False:
+    if i.isdigit() == False:
         only_text += [i]
     else:
         leftovers += [i]
