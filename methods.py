@@ -1,5 +1,4 @@
 #! C:/Users/MichaelLFarwell/AppData/Local/Programs/Python/Python35-32/python.exe
-#! C:UsersMichaelLFarwellAppDataLocalProgramsPythonPython35-32python.exe
 from collections import OrderedDict
 from number_funct import *
 from alphabet_dict import *
@@ -19,7 +18,7 @@ def filter_non_hex(in_text):
     for index, i in enumerate(in_text_filtered):
         if i == " ":
             in_text_filtered.pop(index)
-        elif is_number(i):
+        elif i.isdigit():
             in_text_filtered.pop(index)
     return in_text_filtered
 
@@ -66,14 +65,14 @@ def pairs_num_value(hex_pairs):
         ##creates 2d array | [[0,1],[2,3]]
     num_array = []
     for i, k in dbl_array:
-        if (is_number(i) == False) and (is_number(k) == False):
+        if (i.isdigit() == False) and (k.isdigit() == False):
             i = hex_dict[i]
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
-        elif (is_number(i) == False):
+        elif (i.isdigit() == False):
             i = hex_dict[i]
             num_array.append([int(i), int(k)])
-        elif (is_number(k) == False):
+        elif (k.isdigit() == False):
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
         else:
@@ -99,7 +98,7 @@ def pairs_value(num_pairs):
     return values_str
 
 
-def new_good_input(in_query, values):
+def good_input(in_query, values):
     ## WILL RETURN STRING
     is_good = False
     for index, v in enumerate(values):
@@ -131,6 +130,6 @@ def is_alphanumeric(x):
 if __name__ == "__main__":
     query = "Pick a # between 0 and 9: \n"
     values = [i for i in range(0, 9)]
-    ans = new_good_input(query, values)
+    ans = good_input(query, values)
     print ("Your answer was: " + ans)
 

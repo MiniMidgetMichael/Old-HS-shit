@@ -2,15 +2,7 @@
 #! C:UsersMichaelLFarwellAppDataLocalProgramsPythonPython35-32python.exe
 from hex_values import *
 from collections import OrderedDict
-def is_number(x):
-    try:
-        int(x)
-        return True
-    except ValueError:
-        return False
-##print (is_number("3.02"))
-##print (is_number("3"))
-##print (is_number(3))
+
 def is_float(x):
     try:
         float(x)

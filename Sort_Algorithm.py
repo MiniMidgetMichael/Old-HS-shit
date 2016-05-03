@@ -15,7 +15,7 @@ def mk_graph(values, t):
     next_pos = ()
     for i in values:
 ##        print (t.pos())
-        if is_number(i):
+        if i.isdigit():
             if t.pos() == last_pos:
                 t.goto(next_pos)
             else:

@@ -46,14 +46,14 @@ def pairs_num_value(hex_pairs):
         ##creates 2d array | [[0,1],[2,3]]
     num_array = []
     for i, k in dbl_array:
-        if (is_number(i) == False) and (is_number(k) == False):
+        if (i.isdigit() == False) and (k.isdigit() == False):
             i = hex_dict[i]
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
-        elif (is_number(i) == False):
+        elif (i.isdigit() == False):
             i = hex_dict[i]
             num_array.append([int(i), int(k)])
-        elif (is_number(k) == False):
+        elif (k.isdigit() == False):
             k = hex_dict[k]
             num_array.append([int(i), int(k)])
         else:
@@ -92,10 +92,10 @@ def activate():
         in_text += i
     print (in_text)
 
-    in_hex = [i for i in in_text if i in hex_list or is_number(i)]
+    in_hex = [i for i in in_text if i in hex_list or i.isdigit()]
     ##print (in_hex)
 
-    ##print (list(filter(lambda x: is_number(x), in_text)))
+    ##print (list(filter(lambda x: x.isdigit(), in_text)))
 
     in_text = list(in_text.casefold())
 
@@ -106,7 +106,7 @@ def activate():
     for index, i in enumerate(in_text_filtered):
         if i == " ":
             in_text_filtered.pop(index)
-        elif is_number(i):
+        elif i.isdigit():
             in_text_filtered.pop(index)
 
     ##print ("#in_text_filtered", in_text_filtered)

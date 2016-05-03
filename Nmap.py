@@ -18,7 +18,7 @@ sp.check_output("dir C:\Windows\winsxs\wow64_microsoft-windows-commandprompt_31b
 ##print ("TEST")
 
 def filter_for_int(s):
-    if is_number(s):
+    if s.isdigit():
         return s
 
 
