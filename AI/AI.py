@@ -71,9 +71,6 @@ class grid_(object):
 
 grid = grid_()
 
-grid.update('01', 1)
-grid.update('12', 1)
-
 
 
 
