@@ -14,6 +14,8 @@ class AI_(turtle.Turtle):
         actions = {}
         self.actions = actions
         self._gen_values()
+        func_params = {}
+        self.func_params = func_params
 
     def _gen_values(self):
         actions = self.actions
@@ -54,23 +56,66 @@ class AI_(turtle.Turtle):
             if (action in values):
                 print (action, values[action])
                 action = values[action]
-                if not(self._param_needed(getattr(self.Turtle, action)) is None):
+                if not(self._param_needed(getattr(self.Turtle, action)) is False):
                     needed_param = self._param_needed(getattr(self.Turtle, action))
                     options[action][0] += 1
                     options[action][1] = needed_param
-                    
+                    self._working_param(getattr(self.Turtle, action), needed_param)
             else:
                 print (action)
             time.sleep(0.5)
             r_time += 0.5
 
-        with open('memory.txt', "wb") as f:
-            #pickle.dump(options, f)
-            pickle.dumps(options)
-        print (options)
+    def _working_param(self, fun, params):
+        func_params = self.func_params
+        rnd_value = random.choice(range(100))
+        types = ['int', 'str', 'bool']
+        values = []
+        strings = [i for i in range(int('0x10ffff', base=16))]
+        good_type = False
+        for i in params:
+            for index, i in enumerate(types):
+                if index == 0:
+                    ##type == int
+                    value = random.choice(range(1, 100))
+                    values.append(value)
+                elif index == 1:
+                    ##type == str
+                    len_ = random.choice(range(10))
+                    value = ""
+                    for i in range(len_):
+                        value += chr(random.choice(strings))
+                        values.append(value)
+                else:
+                    ##type == bool
+                    value = random.choice(range(0,1))
+                    ##choose either 1 or 0
+                    value = bool(value)
+                    ##convert value to bool [i.e. 1 ==> True, 0 ==> False]
+                    values.append(value)
 
+        for i in values:
+            try:
+                fun(i)
+                func_params[fun] = i
+                return i
+            except:
+                pass
+
+    def get_prefs(self):
+        options = self.options
+        ret_values = []
+        for i,k in options.values():
+            if not('UK' in k):
+                 ret_values.append([str(turtle_functions[i]), k])
+        return ret_values
+
+    def get_func_params(self):
+        return self.func_params
 
 
 screen = turtle.Screen()
 AI = AI_(10)
-AI.act(5)
+AI.act(10)
+print (AI.get_prefs(), "\n")
+print (AI.get_func_params())
