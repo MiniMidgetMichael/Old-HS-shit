@@ -15,7 +15,14 @@ Just Random Files, some (alot) may not work<br>
 ^^^^ all redundant and obsolete files ^^^^
 
 <b>TO-DO</b>:<br>
-<li>***replace all 'is_number(x)' references to the proper 'str.isdigit()'***
-<li>find a way to make grid loc hex
+<li>Add end goal for AI
+<li>Add 'preferences' for AI
 <li>remove/fix obsolete & redundant files
 <li>finish 'TO-DO' list
+
+<b>***NOTES TO SELF:***</b><br>
+
+<li>change way AI 'thinks':
+*** if {x_changed or y_changed}:
+	preferences[last_move] += 1
+***

@@ -1,79 +1,76 @@
 #! C:/Users/MichaelLFarwell/AppData/Local/Programs/Python/Python35-32/python.exe
-import random, math
+import random, math, turtle, time, inspect, pickle
 
-"""CREATE GRID FOR AI:
-
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-OOOOOOOOOOOOOOOO
-
-[16x6]
+turtle_functions = turtle._tg_turtle_functions
+##turtle_functions = ['fd', 'bk', 'rt']
 
 
-"""
+class AI_(turtle.Turtle):
+    def __init__(self, chance):
+        assert ((type(chance) is int) and (chance > 0) and (chance < 100)), "chance must be int, and 0 < chance < 100"
+        self.chance = chance
+        __turtle_ = turtle.Turtle()
+        self.Turtle = __turtle_
+        actions = {}
+        self.actions = actions
+        self._gen_values()
 
+    def _gen_values(self):
+        actions = self.actions
+        freq = range(self.chance, 100)
+        if not(bool(actions)):
+            for i in turtle_functions:
+                actions[i] = random.choice(freq)
+        options = {}
+        for i, k in actions.items():
+            options[i] = [0, "UK"]
+        self.options = options
+        ##print (actions)
+        ##print (options)
 
-class grid_(object):
-    def __init__(self, x_len=16, y_len=6, chr_sp='O', chr_e='*'):
-        assert type(x_len) is int, "%s is of %s, not an integer" % (str(x_len), type(x_len))
-        assert type(y_len) is int, "%s is of %s, not an integer" % (str(y_len), type(y_len))
-        assert type(chr_sp) is str, "%s is of %s, not a string" % (chr_sp, type(chr_sp))
-        assert type(chr_e) is str, "%s is of %s, not a string" % (chr_e, type(chr_e))
-        self.x_len = x_len
-        self.y_len = y_len
-        self.chr_sp = chr_sp
-        self.chr_e = chr_e
-        self.__gen()
-
-    def __gen(self):
-        ##create grid and locations
-        x_len = self.x_len
-        y_len = self.y_len
-        grid_x = {}
-        grid_y = {}
-        chr_sp = self.chr_sp
-        for i in range(x_len):
-            grid_x[i] = chr_sp
-        for i in range(y_len):
-            grid_y[i] = chr_sp
-        ##print (grid_x)
-        ##print (grid_y)
-        self.grid_x = grid_x
-        self.grid_y = grid_y
-
-    def update(self, loc, chr_):
-        assert ((type(loc) is str) and len(loc) == 2), "location must be str with a len of 2"
-        assert ((type(chr_) is int) and (chr_ == 0 or chr_ == 1)), "character must be int and 0 or 1"
-        x_len = self.x_len
-        y_len = self.y_len
-        chr_sp = self.chr_sp
-        chr_e = self.chr_e
-        grid_x = self.grid_x
-        grid_y = self.grid_y
-        x_loc = int(loc[0])
-        y_loc = int(loc[1])
-        if chr_ == 1:
-            char = chr_e
-            grid_x[x_loc] = char
-            grid_y[y_loc] = char
+    def _param_needed(self, fun):
+        if not(inspect.getargspec(fun)[0]) is None:
+            needed_param = inspect.getargspec(fun)[0]
+            return needed_param
         else:
-            char = chr_sp
-            grid_x[x_loc] = char
-            grid_y[y_loc] = char
-        print (grid_x)
-        print (grid_y)
-        
-    
+            return False
 
-grid = grid_()
+    def act(self, t):
+        options = self.options
+        r_time = 0
+        actions = self.actions
+        chance = self.chance
+        ##print (actions.values())
+        ##values = list(actions.values())
+        values = dict.fromkeys(actions.values())
+        k = 0
+        for i in values:
+            values[i] = list(actions.keys())[k]
+            k += 1
+        ##print (values)
+        action = random.choice(range(chance, 100))
+        while r_time < t:
+            action = random.choice(range(chance, 100))
+            if (action in values):
+                print (action, values[action])
+                action = values[action]
+                if not(self._param_needed(getattr(self.Turtle, action)) is None):
+                    needed_param = self._param_needed(getattr(self.Turtle, action))
+                    options[action][0] += 1
+                    options[action][1] = needed_param
+                    
+            else:
+                print (action)
+            time.sleep(0.5)
+            r_time += 0.5
+
+        with open('memory.txt', "wb") as f:
+            #pickle.dump(options, f)
+            pickle.dumps(options)
+        print (options)
 
 
 
-
-        
-        
-
+screen = turtle.Screen()
+AI = AI_(10)
+AI.act(5)
