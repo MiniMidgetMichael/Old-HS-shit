@@ -122,8 +122,13 @@ class AI_(turtle.Turtle):
     def get_func_params(self):
         return self.func_params
 
+    def get_ran_fun(self):
+        ran_functs = self.func_params.keys()
+        return ran_functs
+
 
 screen = turtle.Screen()
 AI = AI_(10)
 AI.act(10)
 print ("\n", AI.get_func_params())
+print ("\n", AI.get_ran_fun())
