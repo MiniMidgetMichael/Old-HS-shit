@@ -19,3 +19,10 @@ Just Random Files, some (alot) may not work<br>
 <li>Add 'preferences' for AI
 <li>remove/fix obsolete & redundant files
 <li>finish 'TO-DO' list
+
+<b>***NOTES TO SELF:***</b><br>
+
+<li>change way AI 'thinks':
+*** if {x_changed or y_changed}:
+	preferences[last_move] += 1
+***

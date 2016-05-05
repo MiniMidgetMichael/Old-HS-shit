@@ -1,5 +1,5 @@
 #! C:/Users/MichaelLFarwell/AppData/Local/Programs/Python/Python35-32/python.exe
-import random, math, turtle, time, inspect
+import random, math, turtle, time, inspect, pickle
 
 turtle_functions = turtle._tg_turtle_functions
 ##turtle_functions = ['fd', 'bk', 'rt']
@@ -63,13 +63,14 @@ class AI_(turtle.Turtle):
                 print (action)
             time.sleep(0.5)
             r_time += 0.5
+
+        with open('memory.txt', "wb") as f:
+            #pickle.dump(options, f)
+            pickle.dumps(options)
         print (options)
-
-
-
 
 
 
 screen = turtle.Screen()
 AI = AI_(10)
-AI.act(3)
+AI.act(5)
